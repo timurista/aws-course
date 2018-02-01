@@ -233,4 +233,6 @@ Exam tips
 - use source and destination bucket
   -- easiest way to do it
 
+VERY SAFE AND SECURE
+  to save crypto currency
 

@@ -1,0 +1,2 @@
+# AWS
+delete buckets

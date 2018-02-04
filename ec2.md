@@ -136,3 +136,23 @@ DR - Dense storage, RAM (storage freq access)
 MC - Main, Compute (big data)
 GIFT - Graphics, IOPS (fast throughout put crunching), Field Gateway Array, T cheap websites
 PX - P2 bitcoin or gpu (graphics), xtreme, best of all
+
+## DEMO
+one subnet = one availability zone
+yum httpd -y // apache red hat server
+
+## System Check Status
+checks and makes sure hyperviser is up,
+
+## Instance Status Check
+you can reboot and itll come up on another hyperviser or terminate instance
+
+you cannot encrypt the default device provided by amazon
+
+
+## Key Points
+Termination prevention is turned off by default
+  -> turn on by clicking that check box
+  - EBS backed instace root is deleted then instance terminated
+
+you can encrypt root device using 3rd party software but not 

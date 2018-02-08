@@ -136,3 +136,121 @@ DR - Dense storage, RAM (storage freq access)
 MC - Main, Compute (big data)
 GIFT - Graphics, IOPS (fast throughout put crunching), Field Gateway Array, T cheap websites
 PX - P2 bitcoin or gpu (graphics), xtreme, best of all
+
+## DEMO
+one subnet = one availability zone
+yum httpd -y // apache red hat server
+
+## System Check Status
+checks and makes sure hyperviser is up,
+
+## Instance Status Check
+you can reboot and itll come up on another hyperviser or terminate instance
+
+you cannot encrypt the default device provided by amazon
+
+
+## Key Points
+Termination prevention is turned off by default
+  -> turn on by clicking that check box
+  - EBS backed instace root is deleted then instance terminated
+
+you can encrypt root device using 3rd party software but not 
+
+chkconfig httpd on <-- always starts when we reboot
+
+## NOTE
+any rule you make to a security group is instant
+fixing security group is immediate
+
+
+## Security groups are stateful
+Outbound deleting rules means you can still access
+<-- doesnt matter you have no outbound rules, the inbound rules like http will be allowed outbound as well
+
+STATEFUL!
+
+Network access control groups are different, they are statelss
+
+Everything is blocked by default, I cant explicity block
+only allow
+
+RDP TCP 3389
+MYSQL/Aurora TCP 3306
+
+all inbound traffic is blocked by default
+all outbound traffic is allowed
+  changes to security groups take effect immediately
+  multiple security groups with instances
+
+Security groups are stateful
+inbound rule ==> traffic is automatically allowd back out again
+
+Network access control groups are stateless
+  you can specify allow rules NOT deny rules
+
+## EBS
+hard disk drive has to be in same location as cpu, always have to have ebs volume and ec2 instance is same
+amazone machine image gp2, we can upgrade to provision IO
+
+Standard we can't modify the volume
+  everything but normal magnetic storage
+
+ec2 instance in west eu
+take snapshot of ec2 instance (5 minutes)
+  create image or another volume from it
+  we can change colume type from ssd gp2
+  to move ebs volumes from one to another you make a snapshot then from that snapshot I can **copy**
+    to another region anywhere in the world
+  
+  ec2 instance from one region to another, copy and create image
+    book from ec2
+    images from backup
+    AMI images
+      -- no valid instance type
+    
+    TO make amazone machine image
+      - instance, action > create image
+      only of 1 ebs volume
+      click Launch then you can do all different instance types
+
+  
+## EXAM TIPS
+volumes and snapshots
+- volumes exist on EBS
+  virtual hard disk
+  this is your c drive, root ~/
+- snapshots are on s3
+  - point in time copy of volumes
+  snapshots are incremental, only blocks changed are moved to s3
+  - snapshots can take some time to create
+  - stop instance whil
+  AMAZON MACHINE INSTANCES
+    ami from snaps
+  
+  you can change ebs volume, size and storage time on the fly
+  best practice is to stop it
+    same availability zone as ec2 instance
+
+to move an ec2 volume from one AZ/Region to another --> take an snap or image of it, then copy it to the new AZ/Region
+
+snapshots are encrypted automatically
+  DO THIS LAB AGAIN
+  4-5 or 6 questions of moving
+  this and VPC are crucial
+
+DO AGAIN
+
+RAID = Redundant Array of Indepndent Disks
+  - RAID 0 - Striped No Redundancy
+
+Snapshots of Root Device Volumes
+- To create a snapshot for Amazon EBS volumes that serve as root devices stop instance
+- snaps encryptied automatically
+- volumes restored from snaps are encrypted
+- you can sare snaps but only if unencrypted
+- these snaps can be shared with other aws accounts made public
+
+you can make snap of base image and promote to be machine image so next time you provision you dont need to do it again
+
+AMI from snapshot is important

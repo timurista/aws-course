@@ -55,5 +55,7 @@ lambda up out not up automatically
 s3, dynamnodb, lambda is serverless
 
 
+## Domain names not interacting?
+always check you have CORS enabled
 
 
